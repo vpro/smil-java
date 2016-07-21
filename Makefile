@@ -7,4 +7,4 @@ DIR:=src/main/java/$(subst .,/,$(PACKAGE))
 
 $(DIR)/ObjectFactory.java:
 	mkdir -p src/main/java
-	xjc -p $(PACKAGE).projectm.metadata -d src/main/java 	src/main/resources/smil20.xsd
+	xjc -b src/main/resources/bindings.xjc.xml -d src/main/java src/main/resources/smil20.xsd

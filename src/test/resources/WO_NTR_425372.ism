@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created with mod_smooth_streaming(version=1.4.42)-->
+<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
+  <head>
+    <meta name="clientManifestRelativePath" content="20070809_dieropvang01.ismc" />
+    <meta name="creator" content="Unified Streaming Platform (USP)" />
+    <meta name="lookahead_fragments" content="2" />
+    <meta name="dvr_window_length" content="30" />
+    <meta name="archive_segment_length" content="0" />
+    <meta name="archiving" content="false" />
+    <meta name="iss_minimum_fragment_length" content="2" />
+    <meta name="hls_minimum_fragment_length" content="8" />
+    <meta name="hds_minimum_fragment_length" content="4" />
+    <meta name="mpd_minimum_fragment_length" content="0" />
+    
+  </head>
+  <body>
+    <switch>
+      <audio src="20070809_dieropvang01_264.ismv" systemBitrate="63987">
+        <param name="trackID" value="2" valueType="data" />
+        <param name="trackName" value="audio" valueType="data" />
+        <param name="SamplingRate" value="32000" valueType="data" />
+        <param name="Channels" value="2" valueType="data" />
+        <param name="BitsPerSample" value="16" valueType="data" />
+        <param name="PacketSize" value="4" valueType="data" />
+        <param name="AudioTag" value="255" valueType="data" />
+        <param name="FourCC" value="AACL" valueType="data" />
+        <param name="CodecPrivateData" value="1290" valueType="data" />
+      </audio>
+      <audio src="20070809_dieropvang01_628.ismv" systemBitrate="95982">
+        <param name="trackID" value="2" valueType="data" />
+        <param name="trackName" value="audio" valueType="data" />
+        <param name="SamplingRate" value="48000" valueType="data" />
+        <param name="Channels" value="2" valueType="data" />
+        <param name="BitsPerSample" value="16" valueType="data" />
+        <param name="PacketSize" value="4" valueType="data" />
+        <param name="AudioTag" value="255" valueType="data" />
+        <param name="FourCC" value="AACL" valueType="data" />
+        <param name="CodecPrivateData" value="1190" valueType="data" />
+      </audio>
+      <audio src="20070809_dieropvang01_1092.ismv" systemBitrate="127953">
+        <param name="trackID" value="2" valueType="data" />
+        <param name="trackName" value="audio" valueType="data" />
+        <param name="SamplingRate" value="48000" valueType="data" />
+        <param name="Channels" value="2" valueType="data" />
+        <param name="BitsPerSample" value="16" valueType="data" />
+        <param name="PacketSize" value="4" valueType="data" />
+        <param name="AudioTag" value="255" valueType="data" />
+        <param name="FourCC" value="AACL" valueType="data" />
+        <param name="CodecPrivateData" value="1190" valueType="data" />
+      </audio>
+      <video src="20070809_dieropvang01_264.ismv" systemBitrate="200000">
+        <param name="trackID" value="1" valueType="data" />
+        <param name="trackName" value="video" valueType="data" />
+        <param name="NALUnitLengthField" value="4" valueType="data" />
+        <param name="MaxWidth" value="288" valueType="data" />
+        <param name="MaxHeight" value="162" valueType="data" />
+        <param name="FourCC" value="H264" valueType="data" />
+        <param name="CodecPrivateData" value="000000016742C00DDA0485FE23011000000300100000030320F142AA0000000168CE32C8" valueType="data" />
+      </video>
+      <video src="20070809_dieropvang01_628.ismv" systemBitrate="487000">
+        <param name="trackID" value="1" valueType="data" />
+        <param name="trackName" value="video" valueType="data" />
+        <param name="NALUnitLengthField" value="4" valueType="data" />
+        <param name="MaxWidth" value="416" valueType="data" />
+        <param name="MaxHeight" value="234" valueType="data" />
+        <param name="FourCC" value="H264" valueType="data" />
+        <param name="CodecPrivateData" value="000000016742C01EDA0687FE4C0440000003004000000C83C58BA80000000168CE32C8" valueType="data" />
+      </video>
+      <video src="20070809_dieropvang01_1092.ismv" systemBitrate="880000">
+        <param name="trackID" value="1" valueType="data" />
+        <param name="trackName" value="video" valueType="data" />
+        <param name="NALUnitLengthField" value="4" valueType="data" />
+        <param name="MaxWidth" value="704" valueType="data" />
+        <param name="MaxHeight" value="396" valueType="data" />
+        <param name="FourCC" value="H264" valueType="data" />
+        <param name="CodecPrivateData" value="000000016742C01EDA02C0CFEF011000000300100000030320F162EA0000000168CE32C8" valueType="data" />
+      </video>
+    </switch>
+  </body>
+</smil>
