@@ -45,18 +45,6 @@ Defines both the local and global smil20 content control attributes.
     <!-- is there a type for a namespace prefix? -->
     <!-- currently using NMTOKEN -->
 
-    <!-- global system test attributes-->
-    <attribute name="systemAudioDesc" type="smil20:onOrOffType"/>
-    <attribute name="systemBitrate" type="string"/>
-    <attribute name="systemCaptions" type="smil20:onOrOffType"/>
-    <attribute name="systemComponent" type="string"/>
-    <attribute name="systemCPU" type="NMTOKEN"/>
-    <attribute name="systemLanguage" type="string"/>
-    <attribute name="systemOperatingSystem" type="NMTOKEN"/>
-    <attribute name="systemOverdubOrSubtitle" type="smil20:overdubOrSubtitleType"/>
-    <attribute name="systemRequired" type="string"/>
-    <attribute name="systemScreenDepth" type="positiveInteger"/>
-    <attribute name="systemScreenSize" type="string"/>
 
     <!-- system test attribute group -->
     <attributeGroup name="systemTestAttrs">
@@ -74,24 +62,17 @@ Defines both the local and global smil20 content control attributes.
     </attributeGroup>
 
     <!-- deprecated global system test attributes-->
-    <attribute name="system-bitrate" type="string"/>
-    <attribute name="system-captions" type="smil20:onOrOffType"/>
-    <attribute name="system-language" type="string"/>
-    <attribute name="system-overdub-or-caption" type="smil20:overdubOrCaptionsType"/>
-    <attribute name="system-required" type="string"/>
-    <attribute name="system-screen-depth" type="positiveInteger"/>
-    <attribute name="system-screen-size" type="string"/>
 
     <!-- deprecated system test attribute group -->
     <attributeGroup name="deprecatedSystemTestAttrs">
-        <attribute name="system-bitrate" type="string" use="optional"/>
+        <!--<attribute name="system-bitrate" type="string" use="optional"/>
         <attribute name="system-captions" type="smil20:onOrOffType" use="optional"/>
         <attribute name="system-language" type="string" use="optional"/>
         <attribute name="system-overdub-or-caption" type="smil20:overdubOrCaptionsType" use="optional"/>
         <attribute name="system-required" type="string" use="optional"/>
         <attribute name="system-screen-depth" type="positiveInteger" use="optional"/>
         <attribute name="system-screen-size" type="string" use="optional"/>
-    </attributeGroup>
+    --></attributeGroup>
 
     <!-- define the switch element prototype -->
     <complexType name="switchPrototype">

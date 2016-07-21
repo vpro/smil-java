@@ -67,8 +67,10 @@ Defines both the local and global smil20 layout attributes.
     <!-- define the region element prototype -->
     <complexType name="regionPrototype">
         <attribute name="backgroundColor" type="string" use="optional" />
+<!--
 
         <attribute name="background-color" type="string" use="optional" />
+-->
 
         <attribute name="bottom" type="string" use="optional"  default="auto"/>
 
@@ -102,7 +104,7 @@ Defines both the local and global smil20 layout attributes.
     <!-- define the root-layout element prototype -->
     <complexType name="root-layoutPrototype">
         <attribute name="backgroundColor" type="string" use="optional" />
-        <attribute name="background-color" type="string" use="optional" />
+     <!--   <attribute name="background-color" type="string" use="optional" />-->
         <attribute name="height" type="string" use="optional"  default="auto"/>
         <attribute name="width" type="string" use="optional"  default="auto"/>
     </complexType> <!-- end root-layoutType -->

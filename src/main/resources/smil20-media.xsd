@@ -113,9 +113,6 @@ Defines both the local and global smil20 media attributes.
         <attribute name="sensitivity" type="smil20:sensitivityType" use="optional"  default="opaque"/>
     </attributeGroup>
 
-    <!-- define the media clipping attributes-->
-    <attribute name="clipBegin" type="string"/>
-    <attribute name="clipEnd" type="string"/>
 
     <!-- define the media clipping attribute group -->
     <attributeGroup name="mediaClippingAttrs">
@@ -123,16 +120,13 @@ Defines both the local and global smil20 media attributes.
         <attribute name="clipEnd" type="string" use="optional"/>
     </attributeGroup>
 
-    <!-- define the deprecated media clipping attributes-->
-    <attribute name="clip-begin" type="string"/>
-    <attribute name="clip-end" type="string"/>
-
     <!-- define the deprecated media clipping attribute group -->
     <attributeGroup name="deprecatedMediaClippingAttrs">
+<!--
         <attribute name="clip-begin" type="string" use="optional"/>
         <attribute name="clip-end" type="string" use="optional"/>
+-->
     </attributeGroup>
-
     <!--
         define the media object element prototype
         ref, animation, audio, img, text, textstream, video

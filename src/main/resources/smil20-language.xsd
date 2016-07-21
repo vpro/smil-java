@@ -68,30 +68,21 @@ between substitutionGroups and wildcard content.
         <complexContent>
             <extension base="smil20:headPrototype">
                 <sequence>
+<!--
                     <group ref="smil20lang:metaGroup" minOccurs="0" maxOccurs="unbounded"/>
+-->
 
-                    <sequence minOccurs="0" maxOccurs="1">
+                    <sequence minOccurs="0" maxOccurs="unbounded">
                         <group ref="smil20lang:customAttributesGroup" minOccurs="1" maxOccurs="1"/>
                         <group ref="smil20lang:metaGroup" minOccurs="0" maxOccurs="unbounded"/>
-                    </sequence>
-
-                    <sequence minOccurs="0" maxOccurs="1">
                         <group ref="smil20lang:metadataGroup" minOccurs="1" maxOccurs="1"/>
-                        <group ref="smil20lang:metaGroup" minOccurs="0" maxOccurs="unbounded"/>
-                    </sequence>
-
-                    <sequence minOccurs="0" maxOccurs="1">
                         <choice minOccurs="1" maxOccurs="1">
                             <group ref="smil20lang:layoutGroup"/>
                             <group ref="smil20lang:switchGroup"/>
                         </choice>
-                        <group ref="smil20lang:metaGroup" minOccurs="0" maxOccurs="unbounded"/>
+                        <group ref="smil20lang:transitionGroup" minOccurs="1" maxOccurs="unbounded"/>
                     </sequence>
 
-                    <sequence minOccurs="0" maxOccurs="1">
-                        <group ref="smil20lang:transitionGroup" minOccurs="1" maxOccurs="unbounded"/>
-                        <group ref="smil20lang:metaGroup" minOccurs="0" maxOccurs="unbounded"/>
-                    </sequence>
 
                 </sequence>
                 <attributeGroup ref="smil20lang:CoreAttrs"/>
