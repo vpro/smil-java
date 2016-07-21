@@ -15,27 +15,31 @@ Revision: 2001/07/31
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         targetNamespace="http://www.w3.org/2001/SMIL20/"
         elementFormDefault="qualified">
-        
+
+
     <!-- the RDF namespace needs to be verified -->
 
     <!-- import rdf:RDF -->
     <!-- fix schemaLocation later -->
     <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
-        
+
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+
+
     <!-- define the meta element prototype -->
     <complexType name="metaPrototype">
         <attribute name="content" type="string" use="required"/>
         <attribute name="name" type="string" use="required"/>
-    </complexType>        
+    </complexType>
 
-   
+
     <!-- define the metadata element prototype -->
     <complexType name="metadataPrototype">
       <choice minOccurs="0" maxOccurs="unbounded">
          <any namespace="##other" processContents="lax"/>
       </choice>
     </complexType>
-        
+
 
     <!-- define the global metainformation elements -->
     <element name="metadata" type="smil20lang:metadataType" substitutionGroup="smil20lang:metadata"/>

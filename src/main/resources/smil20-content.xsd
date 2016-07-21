@@ -17,23 +17,26 @@ Defines both the local and global smil20 content control attributes.
         targetNamespace="http://www.w3.org/2001/SMIL20/"
         elementFormDefault="qualified">
 
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+
+
     <!-- utility type for test attribute values -->
     <simpleType name="onOrOffType">
-        <restriction base="string">    
+        <restriction base="string">
             <enumeration value="on"/>
             <enumeration value="off"/>
         </restriction>
     </simpleType>
 
     <simpleType name="overdubOrSubtitleType">
-        <restriction base="string">    
+        <restriction base="string">
             <enumeration value="overdub"/>
             <enumeration value="subtitle"/>
         </restriction>
     </simpleType>
 
     <simpleType name="overdubOrCaptionsType">
-        <restriction base="string">    
+        <restriction base="string">
             <enumeration value="overdub"/>
             <enumeration value="caption"/>
         </restriction>
@@ -46,34 +49,34 @@ Defines both the local and global smil20 content control attributes.
     <attribute name="systemAudioDesc" type="smil20:onOrOffType"/>
     <attribute name="systemBitrate" type="string"/>
     <attribute name="systemCaptions" type="smil20:onOrOffType"/>
-    <attribute name="systemComponent" type="string"/>    
-    <attribute name="systemCPU" type="NMTOKEN"/>    
-    <attribute name="systemLanguage" type="string"/>          
-    <attribute name="systemOperatingSystem" type="NMTOKEN"/>        
+    <attribute name="systemComponent" type="string"/>
+    <attribute name="systemCPU" type="NMTOKEN"/>
+    <attribute name="systemLanguage" type="string"/>
+    <attribute name="systemOperatingSystem" type="NMTOKEN"/>
     <attribute name="systemOverdubOrSubtitle" type="smil20:overdubOrSubtitleType"/>
-    <attribute name="systemRequired" type="string"/>               
+    <attribute name="systemRequired" type="string"/>
     <attribute name="systemScreenDepth" type="positiveInteger"/>
-    <attribute name="systemScreenSize" type="string"/>                
+    <attribute name="systemScreenSize" type="string"/>
 
     <!-- system test attribute group -->
     <attributeGroup name="systemTestAttrs">
         <attribute name="systemAudioDesc" type="smil20:onOrOffType" use="optional"/>
         <attribute name="systemBitrate" type="string" use="optional"/>
         <attribute name="systemCaptions" type="smil20:onOrOffType" use="optional"/>
-        <attribute name="systemComponent" type="string" use="optional"/>    
-        <attribute name="systemCPU" type="NMTOKEN" use="optional"/>    
-        <attribute name="systemLanguage" type="string" use="optional"/>          
-        <attribute name="systemOperatingSystem" type="NMTOKEN" use="optional"/>        
+        <attribute name="systemComponent" type="string" use="optional"/>
+        <attribute name="systemCPU" type="NMTOKEN" use="optional"/>
+        <attribute name="systemLanguage" type="string" use="optional"/>
+        <attribute name="systemOperatingSystem" type="NMTOKEN" use="optional"/>
         <attribute name="systemOverdubOrSubtitle" type="smil20:overdubOrSubtitleType" use="optional"/>
-        <attribute name="systemRequired" type="string" use="optional"/>               
+        <attribute name="systemRequired" type="string" use="optional"/>
         <attribute name="systemScreenDepth" type="positiveInteger" use="optional"/>
-        <attribute name="systemScreenSize" type="string" use="optional"/>                
+        <attribute name="systemScreenSize" type="string" use="optional"/>
     </attributeGroup>
 
     <!-- deprecated global system test attributes-->
     <attribute name="system-bitrate" type="string"/>
-    <attribute name="system-captions" type="smil20:onOrOffType"/>          
-    <attribute name="system-language" type="string"/>          
+    <attribute name="system-captions" type="smil20:onOrOffType"/>
+    <attribute name="system-language" type="string"/>
     <attribute name="system-overdub-or-caption" type="smil20:overdubOrCaptionsType"/>
     <attribute name="system-required" type="string"/>
     <attribute name="system-screen-depth" type="positiveInteger"/>
@@ -82,8 +85,8 @@ Defines both the local and global smil20 content control attributes.
     <!-- deprecated system test attribute group -->
     <attributeGroup name="deprecatedSystemTestAttrs">
         <attribute name="system-bitrate" type="string" use="optional"/>
-        <attribute name="system-captions" type="smil20:onOrOffType" use="optional"/>          
-        <attribute name="system-language" type="string" use="optional"/>          
+        <attribute name="system-captions" type="smil20:onOrOffType" use="optional"/>
+        <attribute name="system-language" type="string" use="optional"/>
         <attribute name="system-overdub-or-caption" type="smil20:overdubOrCaptionsType" use="optional"/>
         <attribute name="system-required" type="string" use="optional"/>
         <attribute name="system-screen-depth" type="positiveInteger" use="optional"/>
@@ -115,7 +118,7 @@ Defines both the local and global smil20 content control attributes.
     <complexType name="customTestPrototype">
         <attribute name="defaultState" type="boolean" use="optional"  default="false"/>
 
-        <attribute name="override" use="optional"  default="hidden">    
+        <attribute name="override" use="optional"  default="hidden">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="visible"/>
@@ -140,9 +143,9 @@ Defines both the local and global smil20 content control attributes.
     </complexType>
 
     <!-- define the global content control elements -->
-    <element name="switch" type="smil20lang:switchType" substitutionGroup="smil20lang:switch"/>    
+    <element name="switch" type="smil20lang:switchType" substitutionGroup="smil20lang:switch"/>
     <element name="prefetch" type="smil20lang:prefetchType" substitutionGroup="smil20lang:prefetch"/>
     <element name="customAttributes" type="smil20lang:customAttributesType" substitutionGroup="smil20lang:customAttributes"/>
-    <element name="customTest" type="smil20lang:customTestType" substitutionGroup="smil20lang:customTest"/>    
+    <element name="customTest" type="smil20lang:customTestType" substitutionGroup="smil20lang:customTest"/>
 
 </schema>

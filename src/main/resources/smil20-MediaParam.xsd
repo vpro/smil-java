@@ -17,18 +17,19 @@ Schema for the MediaParam module namespace,
         xmlns:MediaParam="http://www.w3.org/2001/SMIL20/MediaParam"
         targetNamespace="http://www.w3.org/2001/SMIL20/MediaParam"
         elementFormDefault="qualified">
-    
+
     <!-- these URL's will have to be expanded to their full and proper locations -->
 
     <!-- import the definitions in the smil20 namespace -->
     <import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="smil20.xsd"/>
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
 
     <!-- declare global elements in this module -->
-    <element name="param" type="smil20lang:paramType" substitutionGroup="smil20lang:param"/>    
+    <element name="param" type="smil20lang:paramType" substitutionGroup="smil20lang:param"/>
 
     <!-- declare global attributes in this module -->
     <attribute name="erase" type="smil20:eraseMediaType"/>
     <attribute name="mediaRepeat" type="smil20:mediaRepeatType"/>
     <attribute name="sensitivity" type="smil20:sensitivityType"/>
-    
+
 </schema>

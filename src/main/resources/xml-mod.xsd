@@ -9,7 +9,7 @@
         </annotation>
     </attribute>
 
-    <attribute name="space" use="optional"  default="preserve">
+    <attribute name="space"  default="preserve">
         <simpleType>
             <restriction base="NCName">
                 <enumeration value="default"/>

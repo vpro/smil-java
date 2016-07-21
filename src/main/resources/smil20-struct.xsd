@@ -19,12 +19,14 @@ Revision: 2001/07/31
     <!-- import xml:lang -->
     <!-- fix schemaLocation later -->
     <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml-mod.xsd"/>
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+
 
     <!-- define the structure module attribute group -->
     <attributeGroup name="structureModuleAttrs">
         <attribute name="id" type="ID" use="optional"/>
         <attribute name="class" type="string" use="optional"/>
-        <attribute ref="xml:lang" use="optional" />   
+        <attribute ref="xml:lang" use="optional" />
     </attributeGroup>
 
     <!-- define the smil element prototype -->
@@ -44,4 +46,4 @@ Revision: 2001/07/31
     <element name="head" type="smil20lang:headType" substitutionGroup="smil20lang:head"/>
     <element name="body" type="smil20lang:bodyType" substitutionGroup="smil20lang:body"/>
 
-</schema>    
+</schema>

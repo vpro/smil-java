@@ -17,15 +17,16 @@ Schema for the MultiWindowLayout module namespace,
         xmlns:MultiWindowLayout="http://www.w3.org/2001/SMIL20/MultiWindowLayout"
         targetNamespace="http://www.w3.org/2001/SMIL20/MultiWindowLayout"
         elementFormDefault="qualified">
-    
+
     <!-- these URL's will have to be expanded to their full and proper locations -->
 
     <!-- import the definitions in the smil20 namespace -->
     <import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="smil20.xsd"/>
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
 
     <!-- declare global elements in this module -->
     <element name="topLayout" type="smil20lang:topLayoutType" substitutionGroup="smil20lang:topLayout"/>
-    
+
     <!-- declare global attributes in this module -->
     <!-- (none) -->
 

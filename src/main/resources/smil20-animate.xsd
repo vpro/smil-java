@@ -11,19 +11,21 @@ Revision: 2001/07/31
 -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:smil20="http://www.w3.org/2001/SMIL20/"
-        xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language"        
+        xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language"
         targetNamespace="http://www.w3.org/2001/SMIL20/"
         elementFormDefault="qualified">
 
-    <!-- 
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+
+    <!--
         in general, an integration language should include only
         one of "animTargetAttrs" and "animTargetXLinkAttrs"
-    -->        
+    -->
     <attributeGroup name="animTargetAttrs">
-        <attribute name="targetElement" type="IDREF" use="optional" />   
+        <attribute name="targetElement" type="IDREF" use="optional" />
     </attributeGroup>
 
-    <attributeGroup name="animTargetXLinkAttrs">        
+    <attributeGroup name="animTargetXLinkAttrs">
         <attribute name="actuate" use="optional"  default="onLoad">
             <simpleType>
                 <restriction base="string">
@@ -32,9 +34,9 @@ Revision: 2001/07/31
                 </restriction>
             </simpleType>
         </attribute>
-           
+
         <attribute name="href" type="anyURI" use="optional"/>
-           
+
         <attribute name="show" use="optional"  default="embed">
             <simpleType>
                 <restriction base="string">
@@ -44,8 +46,8 @@ Revision: 2001/07/31
                 </restriction>
             </simpleType>
         </attribute>
-           
-        <attribute name="type" use="optional"  default="simple">   
+
+        <attribute name="type" use="optional"  default="simple">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="simple"/>
@@ -57,7 +59,7 @@ Revision: 2001/07/31
         </attribute>
     </attributeGroup>
 
-    <attributeGroup name="animNamedTargetAttrs">        
+    <attributeGroup name="animNamedTargetAttrs">
         <attribute name="attributeName" type="string" use="required"/>
         <attribute name="attributeType" use="optional"  default="auto">
             <simpleType>
@@ -70,15 +72,15 @@ Revision: 2001/07/31
         </attribute>
     </attributeGroup>
 
-    <!-- 
-        'spline' is only included with SplineAnimation module, 
+    <!--
+        'spline' is only included with SplineAnimation module,
          but it is not clear how to exclude it otherwise, so we
          have two otherwise identical attribute groups, 'animModeAttrs'
          and 'animSplineModeAttrs', that only differ by included the 'spline'
          attribute value. Use one or the other of these.
     -->
-    <attributeGroup name="animModeAttrs">        
-        <attribute name="calcMode" use="optional"  default="linear">   
+    <attributeGroup name="animModeAttrs">
+        <attribute name="calcMode" use="optional"  default="linear">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="discrete"/>
@@ -89,8 +91,8 @@ Revision: 2001/07/31
         </attribute>
     </attributeGroup>
 
-    <attributeGroup name="animSplineModeAttrs">        
-        <attribute name="calcMode" use="optional"  default="linear">   
+    <attributeGroup name="animSplineModeAttrs">
+        <attribute name="calcMode" use="optional"  default="linear">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="discrete"/>
@@ -102,21 +104,21 @@ Revision: 2001/07/31
         </attribute>
     </attributeGroup>
 
-    <!-- 
-        include the next two attribute groups only if the 
-        SplineAnimation module is included 
+    <!--
+        include the next two attribute groups only if the
+        SplineAnimation module is included
     -->
-    <attributeGroup name="splineAnimValueAttrs">        
+    <attributeGroup name="splineAnimValueAttrs">
         <attribute name="keyTimes" type="string" use="optional"/>
         <attribute name="keySplines" type="string" use="optional"/>
     </attributeGroup>
 
-    <attributeGroup name="splineAnimPathAttrs">        
+    <attributeGroup name="splineAnimPathAttrs">
         <attribute name="path" type="string" use="optional"/>
     </attributeGroup>
 
-    <attributeGroup name="animAddAccumAttrs">        
-        <attribute name="additive" use="optional"  default="replace">   
+    <attributeGroup name="animAddAccumAttrs">
+        <attribute name="additive" use="optional"  default="replace">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="replace"/>
@@ -125,7 +127,7 @@ Revision: 2001/07/31
             </simpleType>
         </attribute>
 
-        <attribute name="accumulate" use="optional"  default="none">   
+        <attribute name="accumulate" use="optional"  default="none">
             <simpleType>
                 <restriction base="string">
                     <enumeration value="none"/>
@@ -135,95 +137,95 @@ Revision: 2001/07/31
         </attribute>
     </attributeGroup>
 
-    <attributeGroup name="animSetValuesAttrs">        
-        <attribute name="to" use="optional" type="string"/>   
+    <attributeGroup name="animSetValuesAttrs">
+        <attribute name="to" use="optional" type="string"/>
     </attributeGroup>
 
-    <attributeGroup name="animValuesAttrs">        
+    <attributeGroup name="animValuesAttrs">
         <attributeGroup ref="smil20:animSetValuesAttrs"/>
-        <attribute name="from" use="optional" type="string"/>   
-        <attribute name="by" use="optional" type="string"/>   
-        <attribute name="values" use="optional" type="string"/>   
+        <attribute name="from" use="optional" type="string"/>
+        <attribute name="by" use="optional" type="string"/>
+        <attribute name="values" use="optional" type="string"/>
     </attributeGroup>
 
     <complexType name="animatePrototype">
         <attributeGroup ref="smil20:animNamedTargetAttrs"/>
-        <attributeGroup ref="smil20:animAddAccumAttrs"/>        
-        <attributeGroup ref="smil20:animValuesAttrs"/> 
+        <attributeGroup ref="smil20:animAddAccumAttrs"/>
+        <attributeGroup ref="smil20:animValuesAttrs"/>
     </complexType>
 
     <complexType name="setPrototype">
         <attributeGroup ref="smil20:animNamedTargetAttrs"/>
-        <attributeGroup ref="smil20:animSetValuesAttrs"/> 
+        <attributeGroup ref="smil20:animSetValuesAttrs"/>
     </complexType>
 
     <complexType name="animateMotionPrototype">
-        <attributeGroup ref="smil20:animAddAccumAttrs"/>        
-        <attributeGroup ref="smil20:animValuesAttrs"/> 
+        <attributeGroup ref="smil20:animAddAccumAttrs"/>
+        <attributeGroup ref="smil20:animValuesAttrs"/>
         <attribute name="origin" type="string" use="optional"/>
     </complexType>
 
     <complexType name="animateColorPrototype">
         <attributeGroup ref="smil20:animNamedTargetAttrs"/>
-        <attributeGroup ref="smil20:animAddAccumAttrs"/>        
-        <attributeGroup ref="smil20:animValuesAttrs"/> 
+        <attributeGroup ref="smil20:animAddAccumAttrs"/>
+        <attributeGroup ref="smil20:animValuesAttrs"/>
     </complexType>
 
     <!-- global animate element -->
-    <element name="animate" type="smil20lang:animateType" substitutionGroup="smil20lang:animate"/>    
+    <element name="animate" type="smil20lang:animateType" substitutionGroup="smil20lang:animate"/>
     <complexType name="animateType">
         <complexContent>
-            <extension base="smil20:animatePrototype">                
+            <extension base="smil20:animatePrototype">
                 <choice minOccurs="0" maxOccurs="unbounded">
                     <any namespace="##other" processContents="lax"/>
                 </choice>
                 <attributeGroup ref="smil20:animTargetAttrs"/>
                 <attributeGroup ref="smil20:skipContentAttrs"/>
-                <attributeGroup ref="smil20:animSplineModeAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimValueAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimPathAttrs"/>        
+                <attributeGroup ref="smil20:animSplineModeAttrs"/>
+                <attributeGroup ref="smil20:splineAnimValueAttrs"/>
+                <attributeGroup ref="smil20:splineAnimPathAttrs"/>
                 <anyAttribute namespace="##any" processContents="strict"/>
             </extension>
         </complexContent>
     </complexType>
 
     <!-- global animateMotion element -->
-    <element name="animateMotion" type="smil20lang:animateMotionType" substitutionGroup="smil20lang:animateMotion"/>    
+    <element name="animateMotion" type="smil20lang:animateMotionType" substitutionGroup="smil20lang:animateMotion"/>
     <complexType name="animateMotionType">
         <complexContent>
-            <extension base="smil20:animateMotionPrototype">                
+            <extension base="smil20:animateMotionPrototype">
                 <choice minOccurs="0" maxOccurs="unbounded">
                     <any namespace="##other" processContents="lax"/>
                 </choice>
                 <attributeGroup ref="smil20:animTargetAttrs"/>
                 <attributeGroup ref="smil20:skipContentAttrs"/>
-                <attributeGroup ref="smil20:animSplineModeAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimValueAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimPathAttrs"/>        
+                <attributeGroup ref="smil20:animSplineModeAttrs"/>
+                <attributeGroup ref="smil20:splineAnimValueAttrs"/>
+                <attributeGroup ref="smil20:splineAnimPathAttrs"/>
                 <anyAttribute namespace="##any" processContents="strict"/>
             </extension>
         </complexContent>
     </complexType>
 
     <!-- global animateColor element -->
-    <element name="animateColor" type="smil20lang:animateColorType" substitutionGroup="smil20lang:animateColor"/>    
+    <element name="animateColor" type="smil20lang:animateColorType" substitutionGroup="smil20lang:animateColor"/>
     <complexType name="animateColorType">
         <complexContent>
-            <extension base="smil20:animateColorPrototype">                
+            <extension base="smil20:animateColorPrototype">
                 <choice minOccurs="0" maxOccurs="unbounded">
                     <any namespace="##other" processContents="lax"/>
                 </choice>
                 <attributeGroup ref="smil20:animTargetAttrs"/>
                 <attributeGroup ref="smil20:skipContentAttrs"/>
-                <attributeGroup ref="smil20:animSplineModeAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimValueAttrs"/>        
-                <attributeGroup ref="smil20:splineAnimPathAttrs"/>        
+                <attributeGroup ref="smil20:animSplineModeAttrs"/>
+                <attributeGroup ref="smil20:splineAnimValueAttrs"/>
+                <attributeGroup ref="smil20:splineAnimPathAttrs"/>
                 <anyAttribute namespace="##any" processContents="strict"/>
             </extension>
         </complexContent>
     </complexType>
 
     <!-- global set element -->
-    <element name="set" type="smil20lang:setType" substitutionGroup="smil20lang:set"/>    
+    <element name="set" type="smil20lang:setType" substitutionGroup="smil20lang:set"/>
 
-</schema>    
+</schema>

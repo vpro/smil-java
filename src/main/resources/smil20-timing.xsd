@@ -17,6 +17,9 @@ Defines both the local and global smil20 timing attributes.
         targetNamespace="http://www.w3.org/2001/SMIL20/"
         elementFormDefault="qualified">
 
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+
+
     <!-- define the begin/end timing attributes -->
     <attribute name="begin" type="string"/>
     <attribute name="end" type="string"/>
@@ -25,7 +28,7 @@ Defines both the local and global smil20 timing attributes.
     <!-- other attribute groups require inclusion of this group -->
     <attributeGroup name="beginEndTimingAttrs">
         <attribute name="begin" type="string"/>
-        <attribute name="end" type="string"/>    
+        <attribute name="end" type="string"/>
     </attributeGroup>
 
     <!-- define the dur timing attribute -->
@@ -74,14 +77,14 @@ Defines both the local and global smil20 timing attributes.
             <enumeration value="hold"/>
             <enumeration value="auto"/>
             <enumeration value="default"/>
-            
-            <!-- 
+
+            <!--
                 this value is only legal when transitions are included
                 in the profile. may need a means to separate out this
-                attribute value, but not clear whether or how XML Schemas 
+                attribute value, but not clear whether or how XML Schemas
                 provides this.
-            -->                    
-            <enumeration value="transition"/>                    
+            -->
+            <enumeration value="transition"/>
         </restriction>
     </simpleType>
 
@@ -184,7 +187,7 @@ Defines both the local and global smil20 timing attributes.
             <enumeration value="independent"/>
             <enumeration value="default"/>
         </restriction>
-    </simpleType>            
+    </simpleType>
 
     <!-- define the syncBehavior attributes -->
     <attribute name="syncBehavior" type="smil20:syncBehaviorType"/>
@@ -204,7 +207,7 @@ Defines both the local and global smil20 timing attributes.
             <enumeration value="independent"/>
             <enumeration value="inherit"/>
         </restriction>
-    </simpleType>            
+    </simpleType>
 
     <!-- define the syncBehaviorDefault attributes -->
     <attribute name="syncBehaviorDefault" type="smil20:syncBehaviorDefaultType"/>
@@ -223,7 +226,7 @@ Defines both the local and global smil20 timing attributes.
     <attributeGroup name="syncMasterAttrs">
         <attribute name="syncMaster" type="boolean" use="optional"  default="false"/>
     </attributeGroup>
-    
+
     <!-- define the restartDefaultType attribute value type -->
     <simpleType name="restartDefaultType">
         <restriction base="string">
@@ -247,17 +250,17 @@ Defines both the local and global smil20 timing attributes.
         <restriction base="string">
             <enumeration value="remove"/>
             <enumeration value="freeze"/>
-            <enumeration value="hold"/>                    
+            <enumeration value="hold"/>
             <enumeration value="auto"/>
             <enumeration value="inherit"/>
-            
-            <!-- 
+
+            <!--
                 this value is only legal when transitions are included
                 in the profile. may need a means to separate out this
-                attribute value, but not clear whether or how XML Schemas 
+                attribute value, but not clear whether or how XML Schemas
                 provides this.
-            -->                    
-            <enumeration value="transition"/>                    
+            -->
+            <enumeration value="transition"/>
         </restriction>
     </simpleType>
 
@@ -272,7 +275,7 @@ Defines both the local and global smil20 timing attributes.
     <!-- define the par element prototype -->
     <complexType name="parPrototype">
         <attributeGroup ref="smil20:beginEndTimingAttrs"/>
-        <attributeGroup ref="smil20:durTimingAttrs"/>        
+        <attributeGroup ref="smil20:durTimingAttrs"/>
         <attributeGroup ref="smil20:fillTimingAttrs"/>
         <attributeGroup ref="smil20:endsyncTimingAttrs"/>
     </complexType>
@@ -285,7 +288,7 @@ Defines both the local and global smil20 timing attributes.
     </complexType>
 
     <!-- define the priorityClass element prototype -->
-    <complexType name="priorityClassPrototype">        
+    <complexType name="priorityClassPrototype">
         <attribute name="peers" use="optional"  default="stop">
             <simpleType>
                 <restriction base="string">
@@ -328,9 +331,9 @@ Defines both the local and global smil20 timing attributes.
     </complexType>
 
     <!-- define the excl element prototype -->
-    <complexType name="exclPrototype">        
+    <complexType name="exclPrototype">
         <attributeGroup ref="smil20:beginEndTimingAttrs"/>
-        <attributeGroup ref="smil20:durTimingAttrs"/>    
+        <attributeGroup ref="smil20:durTimingAttrs"/>
         <attributeGroup ref="smil20:fillTimingAttrs"/>
         <attributeGroup ref="smil20:endsyncTimingAttrs"/>
     </complexType>
@@ -340,5 +343,5 @@ Defines both the local and global smil20 timing attributes.
     <element name="seq" type="smil20lang:seqType" substitutionGroup="smil20lang:seq"/>
     <element name="excl" type="smil20lang:exclType" substitutionGroup="smil20lang:excl"/>
     <element name="priorityClass" type="smil20lang:priorityClassType" substitutionGroup="smil20lang:priorityClass"/>
-                   
-</schema>        
+
+</schema>

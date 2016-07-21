@@ -17,15 +17,16 @@ Schema for the PrefetchControl module namespace,
         xmlns:PrefetchControl="http://www.w3.org/2001/SMIL20/PrefetchControl"
         targetNamespace="http://www.w3.org/2001/SMIL20/PrefetchControl"
         elementFormDefault="qualified">
-    
+
     <!-- these URL's may have to be expanded to their full and proper locations -->
 
     <!-- import the definitions in the smil20 namespace -->
     <import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="smil20.xsd"/>
+    <import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
 
     <!-- declare global elements in this module -->
     <element name="prefetch" type="smil20lang:prefetchType" substitutionGroup="smil20lang:prefetch"/>
-    
+
     <!-- declare global attributes in this module -->
     <!-- (none) -->
 </schema>
